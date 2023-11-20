@@ -1,0 +1,585 @@
+/* Slideshow */
+
+.slideshow-container{
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center;
+}
+
+.slideshow{
+    width: 70%;
+}
+
+/* For owl library */
+    
+.owl-dots {
+    transform: translateY(20px);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2%;
+    height: 50px;
+    justify-content: center;
+}
+
+.owl-dot{
+    border: 2px solid transparent !important;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    text-align: center;
+    background: rgb(202, 202, 202) !important;
+}
+
+.owl-dot.active{
+    background: gray !important;
+}
+
+    /* Slideshow Img */
+
+.item{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    max-width: 850px;
+    width: 100%;
+    height: 300px;
+}
+
+.item0{
+    background-image: url("../img/banners/banner0.gif");
+}
+
+.item1{
+    background-image: url("../img/banners/banner1.png");
+}
+
+.item2{
+    background-image: url("../img/banners/banner2.png");
+}
+
+.item3{
+    background-image: url("../img/banners/banner3.png");
+}
+
+.item4{
+    background-image: url("../img/banners/banner4.png");
+}
+
+.item5{
+    background-image: url("../img/banners/banner5.png");
+}
+
+.item6{
+    background-image: url("../img/banners/banner6.png");
+}
+
+.item7{
+    background-image: url("../img/banners/banner7.png");
+}
+
+.item8{
+    background-image: url("../img/banners/banner8.png");
+}
+
+/* Filter Sect */
+
+.filter-sect{
+    display: grid;
+    justify-items: center;
+    width: 100%;
+}
+
+.sale-ads{
+    width: 70%;
+}
+
+
+    /* Company Filter */
+
+.company-filter-container{
+    transform: translateY(15px);
+    width: 70%;
+    margin-bottom: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+}
+
+.company{
+    flex-basis: 180px;
+    height: 60px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    transition: transform 0.4s;
+    transition-property: transform;
+    position: relative;
+}
+
+.company::after{
+    content: "";
+    width: 100%;
+    height: 80%;
+    opacity: 0;
+    position: absolute;
+    border: 2px solid gray;
+    transition: opacity 0.4s;
+    transition-property: opacity;
+}
+
+.company:hover{
+    transform: scale(1.07);
+}
+
+.company:hover::after{
+    opacity: 1;
+}
+
+.company img{
+    width: 100%;
+    height: 40px;
+}
+
+    /* Custom Filter */
+
+.custom-filter-container{
+    width: 40%;
+    height: 130px;
+    display: flex;
+    gap: 5%;
+}
+
+.filter-box{
+    width: 100%;
+    height: 100%;
+    border: 2px solid;
+    border-radius: 10px;
+    background-color: gray;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    transition: background-color 0.5s;
+    transition-property: background-color;
+}
+
+.filter-box-txt::after{
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    content: "\f054";
+    font-weight: 600;
+    transform: translateY(3%);
+    transition: transform 0.5s;
+}
+
+.filter:hover > .filter-box{
+    background-color: rgb(2, 223, 2);
+}
+
+.filter:hover > .filter-box > .filter-box-txt::after{
+    transform: rotate(90deg);
+}
+
+.filter:hover > .filter-choice{
+    transform: scale(1);
+    transform-origin: top left;
+}
+
+.filter-choice{
+    background-color: rgba(236, 236, 236, 0.8);
+    position: absolute;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    width: 140%;
+    top: 55px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+    transform: scale(0);
+    transform-origin: top left;
+    transition: transform 0.5s;
+    transition-property: transform;
+}
+
+.filter-choice a{
+    text-decoration: none;
+    color: black;
+    font-weight: normal;
+    width: 100%;
+    height: 40px;
+}
+
+.filter-choice div{
+    height: 100%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.filter-choice div:hover{
+    height: 100%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    background-color: gray;
+    color: white;
+}
+
+.filter{
+    font-size: calc(1vw + 1px);
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    align-self: center;
+    position: relative;
+}
+
+.filter.price{
+    width: 17%;;
+    height: 50px;
+}
+
+.filter.sale{
+    width: 22%;;
+    height: 50px;
+}
+
+.filter.star{
+    width: 22%;;
+    height: 50px;
+}
+
+.filter.sort{
+    width: 17%;;
+    height: 50px;
+}
+
+.filter-button-container{
+    display: none;
+    width: 50%;
+    justify-self: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filter-button{
+    border: unset;
+    border-radius: 5px;
+    padding: 0px 10px 0px 10px;
+    height: 34px;
+    background-color: #1191f8;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    place-items: center;
+    gap: 5px;
+}
+
+.filter-button:hover > i{
+    transform: rotate(180deg);
+    color: red;
+}
+
+.filter-button span{
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.filter-button i{
+    transform: rotate(0deg);
+    font-weight: 600;
+    font-size: 15px;
+    transition: transform 0.2s ease-in, color 0.4s;
+}
+
+/* Product Section */
+
+.product-sect{
+    transform: translateY(70px);
+    width: 100%;
+    display: grid;
+    justify-items: center;
+    gap: 100px;
+}
+
+.product-container{
+    width: 69.8%;
+    height: max-content;
+    display: grid;
+    justify-items: center;
+    border: 2px solid;
+    border-radius: 20px;
+    position: relative;
+}
+
+.banner{
+    position: absolute;
+    z-index: 10;
+    width: 98%;
+    height: 50px;
+    top: -30px;
+    border-radius: 20px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.product-container h1{
+    color: white;
+    font-weight: bold;
+    font-size: 1.5vw;
+    position: absolute;
+    transition: color 0.2s;
+    transition-property: color;
+}
+
+.product-frame{
+    align-self: center;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product{
+    margin: 3% 0% 3% 0%;
+    height: 400px;
+    flex-basis: 263.65px;
+    display: grid;
+    grid-template-rows: 280px 35px 20px 65px;
+    align-items: center;
+    border: 1px solid rgb(203, 200, 200);
+    text-decoration: none;
+    color: unset;
+    position: relative;
+}
+
+.product:hover > .product-img{
+    transform: translateY(-15px);
+}
+
+.product:hover > .product-name{
+    color: #288ad6;
+}
+
+.product-img{
+    justify-self: center;
+    width: 90%;
+    background-image: url("../img/products/nokia-51-plus-black-18thangbh-400x400.jpg");
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.2s;
+    transition-property: transform;
+}
+
+.promotag{
+    position: absolute;
+    height: 25px;
+    width: max-content;
+    font-size: 15px;
+    top: 240px;
+    left: 20px;
+    display: flex;
+    place-items: center;
+    font-weight: bold;
+    color: white;
+    border-radius: 5px;
+    padding: 0px 10px 0px 10px;
+}
+
+.promotag.moiramat{
+    background-color: #1191f8;
+}
+
+.promotag.tragop{
+    background-color: #f28902;
+}
+
+.promotag.giamgia{
+    padding: 0px 10px 0px 20px;
+    background-image: linear-gradient(90deg, #ff9c00 0%, #ec1f1f 100%);
+}
+
+.promotag.giareonl{
+    background-color: #3fb846;
+}
+
+.fa-bolt{
+    position: absolute;
+    border: 1px solid  none;
+    background-color: #f21;
+    border-radius: 50px;
+    height: 25px;
+    width: 25px;
+    transform: translateX(-30px);
+    display: grid;
+    place-items: center;
+    font-size: 12px;
+}
+
+.product-name{
+    margin-left: 6%;
+    font-size: 20px;
+    justify-self: flex-start;
+}
+
+.product-price{
+    margin-left: 6%;
+    font-size: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.product-price strong{
+    color: red;
+}
+
+.product-price span{
+    color: black;
+    font-weight: normal;
+    text-decoration: line-through;
+}
+
+.star-container{
+    transform: translateX(5%);
+    height: 100%;
+    display: flex;
+}
+
+.fa-star{
+    align-self: center;
+    color: orange;
+    font-size: 14px;
+}
+
+.fa-star-o{
+    align-self: center;
+    color: orange;
+}
+
+.ratecountdisplay{
+    transform: translate(5%, 4%);
+    align-self: center;
+    color: gray;
+    font-size: 15px;
+}
+
+.addtocart-button{
+    border: unset;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    border: 2px solid rgb(199, 199, 199);
+    background-color: white;
+    border-radius: 50px;
+    display: grid;
+    place-items: center;
+}
+
+.addtocart-button::after{
+    content: "\2b";
+    font-size: 20px;
+    font-weight: bold;
+    color: gray;
+}
+
+.addtocart-button:hover{
+    background-color: rgb(199, 199, 199);
+    box-shadow: 0px 8px 10px 0px rgba(0,0,0,0.2);
+}
+
+.addtocart-button:hover::after{
+    color: black;
+}
+
+.see-all{
+    position: absolute;
+    z-index: 10;
+    width: 98%;
+    height: 50px;
+    bottom: -30px;
+    border-radius: 20px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    background-color: rgb(214, 214, 214);
+    text-decoration: none;
+    transition: background-color 0.2s;
+    transition-property: background-color;
+}
+
+.see-all:hover{
+    background-color: rgb(196, 196, 196);
+}
+
+.see-all:hover > h1{
+    color: black !important;
+}
+
+.hot{
+    background-image: linear-gradient(120deg, #ff9c00 0%, #ec1f1f 50%, #ff9c00 100%);
+}
+
+.new{
+    background-image: linear-gradient(120deg, #42bcf4 0%, #004c70 50%, #42bcf4 100%)
+}
+
+.sale0{
+    background-image: linear-gradient(120deg, #ff9c00 0%, #ec1f1f 50%, #ff9c00 100%);
+}
+
+.shockonl{
+    background-image: linear-gradient(120deg, #5de272 0%, #007012 50%, #5de272 100%);
+}
+
+.discount{
+    background-image: linear-gradient(120deg, #ff9c00 0%, #ec1f1f 50%, #ff9c00 100%);
+}
+
+.cheap{
+    background-image: linear-gradient(120deg, #5de272 0%, #007012 50%, #5de272 100%);
+}
+
+.filter-product-sect{
+    display: none;
+    width: 100%;
+    place-items: center;
+}
+
+.customer-profit-sect{
+    height: 250px;
+    width: 100%;
+    display: grid;
+    align-items: flex-end;
+}
+
+.customer-profit-container{
+    width: 100%;
+    height: 50%;
+    background-color: #dae2dc;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.customer-profit-container li{
+    align-self: center;
+    height: 80%;
+    width: 14%;
+    border-right: 1px solid #bbb;
+    display: grid;
+    place-items: center;
+    font-size: 1vw;
+}
+
+.customer-profit-container li a{
+    text-decoration: none;
+}
